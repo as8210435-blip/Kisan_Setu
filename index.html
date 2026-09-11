@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KisanSaathi - Farmer Market Linkage</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo-section">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <h2>Kisan<span>Saathi</span></h2>
+                <p>बेहतर खेती | बेहतर कल</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#market">Market Linkage</a>
+            <a href="#prices">Price Discovery</a>
+            <a href="#produce">My Produce</a>
+            <a href="#buyers">Buyers</a>
+            <a href="#support">Support</a>
+        </nav>
+
+        <div class="nav-right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+                <span></span>
+            </div>
+
+          
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                Farmer Market Linkage & Price Discovery के साथ
+            </p>
+
+            <h1>
+                Kisan Se Bazaar Tak<br>
+                <span>Ab Har Fasal Ki Sahi Keemat</span>
+            </h1>
+
+            <p class="hero-description">
+               Kisan ko kharidaron ke saath jodein aur apni fasal ki sahi
+
+                    Keemat paayein. Seedhe bazaar se judein aur behtar kamaai karein.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn primary-btn" onclick="registerFarmer()">
+                    <i class="fa-solid fa-tractor"></i>
+                    Get Started
+                </button>
+
+                <button class="btn video-btn" onclick="watchVideo()">
+                    <i class="fa-solid fa-circle-play"></i>
+                    Watch Video
+                </button>
+            </div>
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+    </section>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container">
+
+        <!-- ================= FEATURE CARDS ================= -->
+
+        <section class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon green">
+                    <i class="fa-solid fa-tractor"></i>
+                </div>
+
+                <h3>Farmer Registration</h3>
+
+                <p>
+                    Apni fasal ko register karein aur apne utpaad
+
+                        ke kharidaron se judein.
+                </p>
+
+                <button onclick="registerFarmer()">
+                    Register Now
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon blue">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <h3>Market Linkage</h3>
+
+                <p>
+                    नजदीकी मंडी, buyers और wholesalers से
+                    सीधे जुड़ें।
+                </p>
+
+                <button onclick="exploreMarkets()">
+                    Explore Markets
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon yellow">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+
+                <h3>Price Discovery</h3>
+
+                <p>
+                    अलग-अलग मंडियों के prices compare करें
+                    और बेहतर कीमत पाएं।
+                </p>
+
+                <button onclick="checkPrices()">
+                    Check Prices
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon purple">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>Buyers & Trading</h3>
+
+                <p>
+                    Registered buyers से संपर्क करें और
+                    अपनी फसल बेचें।
+                </p>
+
+                <button onclick="viewBuyers()">
+                    View Buyers
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MARKET PRICE ================= -->
+
+        <section class="price-section" id="prices">
+
+            <div class="price-header">
+
+                <div>
+                    <div class="section-title">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <h2>Latest Market Prices</h2>
+                    </div>
+
+                    <p>आज के प्रमुख फसलों के बाजार भाव</p>
+                </div>
+
+                <button onclick="viewAllPrices()">
+                    View All
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Mandi / Buyer</th>
+                            <th>Price (₹/Quintal)</th>
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="priceTable">
+
+                        <tr>
+                            <td>
+                                <span class="crop-icon wheat">
+                                    🌾
+                                </span>
+                                Gehu
+                            </td>
+
+                            <td>Azadpur Mandi (Delhi)</td>
+
+                            <td>₹ 2,250</td>
+
+                            <td class="up">
+                                ↑ +50
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <span class="crop-icon grain">
+                                    🌾
+                                </span>
+                                Dhan (Paddy)
+                            </td>
+
+                            <td>Khurja Mandi (UP)</td>
+
+                            <td>₹ 1,980</td>
+
+                            <td class="up">
+                                ↑ +20
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <span class="crop-icon corn">
+                                    🌽
+                                </span>
+                                Makka
+                            </td>
+
+                            <td>Ludhiana Market (Punjab)</td>
+
+                            <td>₹ 1,850</td>
+
+                            <td class="up">
+                                ↑ +30
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <span class="crop-icon soybean">
+                                    🫘
+                                </span>
+                                Soyabean
+                            </td>
+
+                            <td>Indore Mandi (MP)</td>
+
+                            <td>₹ 4,200</td>
+
+                            <td class="down">
+                                ↓ -100
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <span class="crop-icon mustard">
+                                    🌾
+                                </span>
+                                Sarson
+                            </td>
+
+                            <td>Jaipur Mandi (RJ)</td>
+
+                            <td>₹ 5,600</td>
+
+                            <td class="up">
+                                ↑ +60
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BENEFITS ================= -->
+
+        <section class="benefits">
+
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <h4>Transparent Process</h4>
+                    <p>हर लेन-देन में पूरी पारदर्शिता</p>
+                </div>
+            </div>
+
+
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <h4>Direct Farmer-Buyer Connect</h4>
+                    <p>किसानों को सीधे buyers से जोड़ें</p>
+                </div>
+            </div>
+
+
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+                    <h4>Better Price Realisation</h4>
+                    <p>अपनी फसल का सही दाम पाएं</p>
+                </div>
+            </div>
+
+
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <h4>Wide Market Access</h4>
+                    <p>देशभर के बाजारों तक पहुंच</p>
+                </div>
+            </div>
+
+
+            <div class="benefit">
+                <div class="benefit-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+
+                <div>
+                    <h4>Digital & Easy</h4>
+                    <p>सरल और आसान डिजिटल प्लेटफॉर्म</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="support">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-leaf"></i>
+                KisanSaathi
+            </div>
+
+            <p>
+                किसानों को बाजार से जोड़कर बेहतर कीमत और
+                बेहतर अवसर उपलब्ध कराना।
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 KisanSaathi. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
